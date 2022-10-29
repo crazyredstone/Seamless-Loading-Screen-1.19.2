@@ -29,11 +29,5 @@
     "sodium:options": {
       "mixin.features.gui.fast_loading_screen": false
     }
-  },
-
-  "depends": {
-    "fabricloader": ">=0.13.3",
-    "fabric": "*",
-    "minecraft": "1.19"
   }
 }
