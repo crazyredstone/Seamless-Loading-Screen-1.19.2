@@ -32,7 +32,7 @@ public abstract class MinecraftClientMixin {
 			reset(screen);
 	}
 
-/*	@Redirect(
+	@Redirect(
 			method = "startIntegratedServer(Ljava/lang/String;Ljava/util/function/Function;Ljava/util/function/Function;ZLnet/minecraft/client/MinecraftClient$WorldLoadAction;)V",
 			at = @At(
 					value = "INVOKE",
@@ -42,7 +42,7 @@ public abstract class MinecraftClientMixin {
 	private void changeScreen(MinecraftClient client) {
 		client.disconnect(new ScreenshotWithTextScreen());
 	}
-*/
+
 	@Redirect(method = "setScreenAndRender", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/MinecraftClient;setScreen(Lnet/minecraft/client/gui/screen/Screen;)V"))
 	private void changeScreen2(MinecraftClient client, Screen screen) {
 		client.setScreen(new ScreenshotWithTextScreen(screen.getTitle()));
